@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import './App.css';
-const init = require("postman/button");
+const PostmanInit = require("./postman/button");
  
 declare global {
   var _pm: any;
@@ -8,22 +8,8 @@ declare global {
 
 function App() {
 
-  // (function (p,o,s,t,m,a,n) {
-  //   !window["_pm"] && (
-  //     window["_pm"] = function () { 
-  //       (window["PostmanRunObject"] || (window["PostmanRunObject"] = [])).push(arguments); 
-  //     }
-  //   );
-  //   !document.getElementById("_pm"+"PostmanRunObject") && 
-  //   document.getElementsByTagName("head")[0].appendChild((
-  //     (n = document.createElement("script")),
-  //     (n.id = "_pm"+"PostmanRunObject"), (n.async = 1), (n.src = "https://run.pstmn.io/button.js"), n
-  //   ));
-  // }(window, document, "_pm", "PostmanRunObject", "https://run.pstmn.io/button.js"));
   useEffect(() => {
-    init(window, 0, "postman-run-button");
-    //Probably not needed anymore : _pm("env.create", "Data API", {CLUSTER_NAME: "Cluster0"}, 0);
-    console.log("effect");
+    PostmanInit(window, 0, "postman-run-button");
   }, [])
 
   const handleChange = () => {
